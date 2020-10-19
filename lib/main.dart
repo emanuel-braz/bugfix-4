@@ -56,14 +56,19 @@ class _MyHomePageState extends State<MyHomePage> {
                           RaisedButton(
                               child: Text('Show Snackbar'),
                               onPressed: () {
+                                OneContext().dismissSnackBar();
                                 OneContext().showSnackBar(
                                     builder: (_) =>
-                                        SnackBar(content: Text('My snackbar')));
+                                        SnackBar(content: Text('My snackbar 2')));
                                 OneContext().popDialog();
                               })
                         ],
                       );
                     });
+
+                    OneContext().showSnackBar(
+                                    builder: (_) =>
+                                        SnackBar(content: Text('My snackbar 1')));
 
                 // OneContext().showDialog(builder: (_) {
                 //   return AlertDialog(
